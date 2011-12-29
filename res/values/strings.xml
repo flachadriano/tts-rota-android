@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hello">Hello World, TTSRotaActivity!</string>
+    <string name="app_name">TTS Rota</string>
+
+</resources>
