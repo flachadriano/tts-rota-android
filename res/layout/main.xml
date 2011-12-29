@@ -5,8 +5,50 @@
     android:orientation="vertical" >
 
     <TextView
+        android:id="@+id/labelOrigem"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="@string/hello" />
+        android:text="Origem"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <EditText
+        android:id="@+id/origem"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+
+        <requestFocus />
+    </EditText>
+
+    <TextView
+        android:id="@+id/labelDestino"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Destino"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <EditText
+        android:id="@+id/destino"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/solicitarRota"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Solicitar rota" />
+
+    <TextView
+        android:id="@+id/labelRota"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Rota"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <EditText
+        android:id="@+id/rota"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.87"
+        android:inputType="textMultiLine" />
 
 </LinearLayout>
