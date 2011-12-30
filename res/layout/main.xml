@@ -30,6 +30,18 @@
         android:id="@+id/destino"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/labelLocomocao"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Locomoção"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <Spinner
+        android:id="@+id/locomocao"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" android:prompt="locomocao_promp"/>
 
     <Button
         android:id="@+id/solicitarRota"

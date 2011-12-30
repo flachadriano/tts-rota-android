@@ -16,11 +16,13 @@ public final class R {
     public static final class id {
         public static final int destino=0x7f050003;
         public static final int labelDestino=0x7f050002;
+        public static final int labelLocomocao=0x7f050004;
         public static final int labelOrigem=0x7f050000;
-        public static final int labelRota=0x7f050005;
+        public static final int labelRota=0x7f050007;
+        public static final int locomocao=0x7f050005;
         public static final int origem=0x7f050001;
-        public static final int rota=0x7f050006;
-        public static final int solicitarRota=0x7f050004;
+        public static final int rota=0x7f050008;
+        public static final int solicitarRota=0x7f050006;
     }
     public static final class layout {
         public static final int main=0x7f030000;
