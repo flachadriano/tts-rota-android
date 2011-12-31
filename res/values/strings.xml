@@ -3,5 +3,9 @@
 
     <string name="hello">Hello World, TTSRotaActivity!</string>
     <string name="app_name">TTS Rota</string>
-
+	
+    <string-array name="locomocao_array">
+        <item>A pé</item>
+        <item>De Carro</item>
+    </string-array>
 </resources>
