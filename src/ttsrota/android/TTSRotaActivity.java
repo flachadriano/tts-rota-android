@@ -1,15 +1,16 @@
 package ttsrota.android;
 
-import java.io.IOException;
+import java.net.URI;
 
 import org.apache.http.HttpResponse;
 import org.apache.http.HttpStatus;
 import org.apache.http.client.HttpClient;
-import org.apache.http.client.methods.HttpPost;
+import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.util.EntityUtils;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -18,7 +19,12 @@ import android.widget.EditText;
 import android.widget.Spinner;
 
 public class TTSRotaActivity extends Activity {
-	/** Called when the activity is first created. */
+
+	private static HttpClient HTTP_CLIENT = new DefaultHttpClient();
+	private static HttpGet HTTP_GET = new HttpGet();
+	private static StringBuilder URL = new StringBuilder(
+			"http://maps.google.com.br/maps/api/directions/json?origin=");
+
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -36,22 +42,37 @@ public class TTSRotaActivity extends Activity {
 		final Button solicitarRota = (Button) findViewById(R.id.solicitarRota);
 		solicitarRota.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {
+				// Chamando tela de apresentacao da rota
+				Intent rota = new Intent(v.getContext(), RotaActivity.class);
 				try {
-					HttpClient hc = new DefaultHttpClient();
-					HttpPost post = new HttpPost("http://maps.google.com.br/maps/api/directions/json?origin=Rua José Kasteler, Jaraguá Esquerdo, Jaraguá do Sul - Santa Catarina&destination=Rua Arduino Pradi, São Luis, Jaraguá do Sul - Santa Catarina&language=pt-BR&sensor=false");
 
-					HttpResponse rp = hc.execute(post);
+					EditText origem = (EditText) findViewById(R.id.origem);
+					EditText destino = (EditText) findViewById(R.id.destino);
+					Spinner locomocao = (Spinner) findViewById(R.id.locomocao);
 
-					String rota = "";
-					if (rp.getStatusLine().getStatusCode() == HttpStatus.SC_OK) {
-						rota = EntityUtils.toString(rp.getEntity());
+					URL.setLength(58);
+					URL.append(origem.getText());
+					URL.append("&destination=");
+					URL.append(destino.getText());
+					URL.append("&mode=");
+					URL.append(locomocao.getSelectedItemPosition() == 0 ? "walking"
+							: "driving");
+					URL.append("&language=pt-BR&sensor=false");
+					String url = URL.toString().replace(" ", "%20");
+					HTTP_GET.setURI(new URI(url));
+
+					HttpResponse httpResponse = HTTP_CLIENT.execute(HTTP_GET);
+
+					if (httpResponse.getStatusLine().getStatusCode() == HttpStatus.SC_OK) {
+						rota.putExtra("rota",
+								EntityUtils.toString(httpResponse.getEntity()));
 					}
-					EditText rotaEdit = (EditText) findViewById(R.id.rota);
-					rotaEdit.setText(rota);
-					
-				} catch (IOException e) {
-					e.printStackTrace();
+
+				} catch (Exception e) {
+					rota.putExtra("rota",
+							URL.toString() + " -- " + e.getMessage());
 				}
+				startActivity(rota);
 			}
 		});
 	}

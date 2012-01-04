@@ -9,12 +9,12 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="Origem"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+        android:textAppearance="?android:attr/textAppearanceLarge" android:textSize="20px"/>
 
     <EditText
         android:id="@+id/origem"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content" >
+        android:layout_height="wrap_content" android:layout_marginBottom="15px">
 
         <requestFocus />
     </EditText>
@@ -24,43 +24,29 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="Destino"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+        android:textAppearance="?android:attr/textAppearanceLarge" android:textSize="20px"/>
 
     <EditText
         android:id="@+id/destino"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content" android:layout_marginBottom="15px"/>
 
     <TextView
         android:id="@+id/labelLocomocao"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="Locomoção"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+        android:textAppearance="?android:attr/textAppearanceLarge" android:textSize="20px"/>
 
     <Spinner
         android:id="@+id/locomocao"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content" />
-
+        android:layout_height="wrap_content" android:layout_marginBottom="20px"/>
+
     <Button
         android:id="@+id/solicitarRota"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="Solicitar rota" />
-
-    <TextView
-        android:id="@+id/labelRota"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="Rota"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
-
-    <EditText
-        android:id="@+id/rota"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="0.87"
-        android:inputType="textMultiLine" />
+        android:text="Solicitar rota" android:textSize="20px"/>
 
 </LinearLayout>
