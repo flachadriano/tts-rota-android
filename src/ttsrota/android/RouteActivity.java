@@ -4,16 +4,16 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.widget.EditText;
 
-public class RotaActivity extends Activity {
+public class RouteActivity extends Activity {
 	/** Called when the activity is first created. */
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.rota);
+		setContentView(R.layout.route);
 
-		String rota = (String) getIntent().getSerializableExtra("rota");
-		EditText rotaEdit = (EditText) findViewById(R.id.rota);
-		
-		rotaEdit.setText(rota);
+		String route = (String) getIntent().getSerializableExtra("route");
+		EditText routeEdit = (EditText) findViewById(R.id.route);
+
+		routeEdit.setText(route);
 	}
 }

@@ -5,46 +5,46 @@
     android:orientation="vertical" >
 
     <TextView
-        android:id="@+id/labelOrigem"
+        android:id="@+id/origin_label"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="Origem"
         android:textAppearance="?android:attr/textAppearanceLarge" android:textSize="20px"/>
 
     <EditText
-        android:id="@+id/origem"
+        android:id="@+id/origin"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content" android:layout_marginBottom="15px">
+        android:layout_height="wrap_content" android:layout_marginBottom="15px" android:text="FURB, Blumenau, Santa Catarina">
 
         <requestFocus />
     </EditText>
 
     <TextView
-        android:id="@+id/labelDestino"
+        android:id="@+id/destination_label"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="Destino"
         android:textAppearance="?android:attr/textAppearanceLarge" android:textSize="20px"/>
 
     <EditText
-        android:id="@+id/destino"
+        android:id="@+id/destination"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content" android:layout_marginBottom="15px"/>
+        android:layout_height="wrap_content" android:layout_marginBottom="15px" android:text="Vila Germânica, Blumenau"/>
 
     <TextView
-        android:id="@+id/labelLocomocao"
+        android:id="@+id/mode_label"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="Locomoção"
         android:textAppearance="?android:attr/textAppearanceLarge" android:textSize="20px"/>
 
     <Spinner
-        android:id="@+id/locomocao"
+        android:id="@+id/mode"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content" android:layout_marginBottom="20px"/>
 
     <Button
-        android:id="@+id/solicitarRota"
+        android:id="@+id/request_route"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="Solicitar rota" android:textSize="20px"/>
