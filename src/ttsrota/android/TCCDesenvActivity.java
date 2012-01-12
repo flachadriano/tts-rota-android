@@ -8,6 +8,7 @@ import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.util.EntityUtils;
+import org.json.JSONObject;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -65,7 +66,9 @@ public class TCCDesenvActivity extends Activity {
 				HttpResponse httpResponse = HTTP_CLIENT.execute(HTTP_GET);
 
 				if (httpResponse.getStatusLine().getStatusCode() == HttpStatus.SC_OK) {
-					route = EntityUtils.toString(httpResponse.getEntity());
+					String routeString = EntityUtils.toString(httpResponse.getEntity());
+					route = GoogleMaps.getRouteJSON(new JSONObject(routeString));
+					route = route.replace("<b>", "").replace("</b>", "");
 				}
 			}
 

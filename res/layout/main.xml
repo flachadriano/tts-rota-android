@@ -14,7 +14,7 @@
     <EditText
         android:id="@+id/origin"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content" android:layout_marginBottom="15px" android:text="FURB, Blumenau, Santa Catarina">
+        android:layout_height="wrap_content" android:layout_marginBottom="15px">
 
         <requestFocus />
     </EditText>
@@ -29,7 +29,7 @@
     <EditText
         android:id="@+id/destination"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content" android:layout_marginBottom="15px" android:text="Vila Germânica, Blumenau"/>
+        android:layout_height="wrap_content" android:layout_marginBottom="15px"/>
 
     <TextView
         android:id="@+id/mode_label"
